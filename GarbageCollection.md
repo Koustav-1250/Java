@@ -1,12 +1,19 @@
--  GC
-  - It is used to remove the objects stored in heap memory which has no reference.
-  - JVM decides when we want to process garbage collection.
-  - System.gc() is one way we can call garbage collector in our program
-  - So there are two strategies in which jvm finds out not used objects i.e MARKING and SWEEPING
-      * So firstly we find out which object is having reference to stack memory and then we find the nested reference to that object in heap memory. Basically marking
-        all the objects that are live directly and indirectly. The remaining unreferenced objects are defined as island of isolation.
-      * Older way garbage collection was done using counter method. But the cyclic dependecy of object reference was the problem in this method.
-      * Sweeping is technique that JVM does to remove the unreference objects. So there are 3 ways it does,
-        a) normal sweeping -> takes extra memory but takes less steps than b.
-        b) sweeping with compacting -> more memory but takes one extra step of make the memory compact.
-        c) 
+## Garbage Collection in Java
+
+Garbage Collection (GC) is a crucial process in Java that removes objects stored in the heap memory when they no longer have any references. The Java Virtual Machine (JVM) decides when to perform garbage collection based on various factors.
+
+- **Calling the Garbage Collector**: We can explicitly call the garbage collector in our program using the `System.gc()` method. However, it's important to note that the JVM has its own logic to determine the optimal time for garbage collection, and manual invocation should be used judiciously.
+
+- **Marking and Sweeping**: JVM utilizes two main strategies to identify unreferenced objects:
+
+  1. **Marking**: This process involves identifying objects that are directly or indirectly referenced by the stack memory. It marks all live objects and treats the remaining unreferenced objects as "islands of isolation." Previously, a counting method was used, but it faced challenges with cyclic dependency of object references.
+
+  2. **Sweeping**: This technique is employed by the JVM to remove the unreferenced objects. There are three different approaches:
+
+     - **Normal Sweeping**: This method takes extra memory but requires fewer steps than other approaches.
+     - **Sweeping with Compacting**: It consumes more memory but involves an additional step of compacting the memory to optimize space.
+     - (Incomplete point)
+    
+- STOP THE WORLD: While marking the objects for garbage collection, the java application is paused. (Think Why ;) ) 
+
+Understanding the various aspects of garbage collection is essential for optimizing memory usage and developing efficient Java applications.
