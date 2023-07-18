@@ -14,6 +14,37 @@ Garbage Collection (GC) is a crucial process in Java that removes objects stored
      - **Sweeping with Compacting**: It consumes more memory but involves an additional step of compacting the memory to optimize space.
      - (Incomplete point)
     
-- STOP THE WORLD: While marking the objects for garbage collection, the java application is paused. (Think Why ;) ) 
+- STOP THE WORLD: While marking the objects for garbage collection, the java application is paused. (Think Why ;) )
+  - There is alternative to this which is known as Concurrent garbage collector that run along side the application.
+- JVM has five implementations of Garbage Collector
+  - serial GC:
+      a) Young generation: mark and copy strategy
+      b) old generation: mark compact and sweep
+      c) stop the world
+      d) runs on single thread
+  - paralled GC:
+      a) Young generation: mark and copy strategy
+      b) old generation: mark compact and sweep
+      c) stop the world for less time than for serial GC
+      d) running on mutiple thread
+  - Concurrent Mark Sweep (CMS) GC
+  - Garbage First GC (G1GC)
+      a) Keeps tract of amount of live and dead objects
+      b) divides heap in smaller regions
+      c) not only concurrent but also parallel support
+      d) aims for short pauses possible
+      e) running on multiple threads
+      f) concurrent and stop the world
+      g) best for high performace applications and large memory space
+  - Z GC
+      a) max of 10 ms pauses
+      b) uses reference coloring
+  - **Metrics in GC**
+       - Allocation rate: how fast the application allocates objects in memory.
+       - Heap population
+       - Mutation rate: How often the refrences are updated in the memory
+       - Object life span
+       - Mark time and Compaction time -> how long GC takes to mark the objects and free up the space and reallocates the space in memory
+      
 
 Understanding the various aspects of garbage collection is essential for optimizing memory usage and developing efficient Java applications.
