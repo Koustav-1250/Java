@@ -45,6 +45,9 @@ Garbage Collection (GC) is a crucial process in Java that removes objects stored
        - Mutation rate: How often the refrences are updated in the memory
        - Object life span
        - Mark time and Compaction time -> how long GC takes to mark the objects and free up the space and reallocates the space in memory
+
+  _ What is jstat?
+     - It is JVM statistics monitoring tool
       
 
 Understanding the various aspects of garbage collection is essential for optimizing memory usage and developing efficient Java applications.
