@@ -8,11 +8,12 @@ Java employs two major types of memory: stack memory and heap memory.
 
 Heap memory is further divided into three generations:
 
-1. **Young Generation**: This space holds newly created objects. It is further divided into an Eden space and two survivor spaces. Objects initially reside in the Eden space, and some of them are moved to survivor spaces during garbage collection.
+1. **Young Generation**: 
+    a) Eden Space: This space holds newly created objects. It is further divided into an Eden space and two survivor spaces. Objects initially reside in the Eden space, and some of them are moved to survivor spaces during garbage collection.
 
-2. **Survivor Generation**: Survivor spaces hold objects that have survived one or more garbage collection cycles. Objects that are still referenced will be moved between survivor spaces in subsequent garbage collection cycles.
+    b). Survivor space*: Survivor spaces hold objects that have survived one or more garbage collection cycles. Objects that are still referenced will be moved between survivor spaces in subsequent garbage collection cycles.
 
-3. **Old Generation**: The old generation, also known as the tenured generation, contains objects that are referenced for a longer duration of time. These objects have survived multiple garbage collection cycles and are more stable.
+2. **Old Generation**: The old generation, also known as the tenured generation, contains objects that are referenced for a longer duration of time. These objects have survived multiple garbage collection cycles and are more stable.
 
 Additionally, Java has a **Metaspace** (previously known as Permanent Generation) where metadata related to classes, methods, and annotations is stored. It dynamically expands to accommodate class metadata, reducing the risk of memory-related errors.
 
