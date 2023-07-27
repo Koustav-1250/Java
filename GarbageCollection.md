@@ -49,8 +49,17 @@ Garbage Collection (GC) is a crucial process in Java that removes objects stored
   _ What is jstat?
      - It is JVM statistics monitoring tool
      - jstat -gcutil <pid> for getting stats of heap memory.
-     - for JVM tuning we can use -XX:HeapDumpOutOfMemory params in java command line for running server.
-     - 
-      
+     - for JVM tuning we can use -XX:+HeapDumpOnOutOfMemoryError params in java command line for running server.
+  - Smaller heap size means more GC activity. We can increase heap size us -Xmx1024m params
+  - Tuning the GC Type
+    - -XX:+UseSerialGC
+    - -XX:+UseParallelGC
+  - Common solution to memory leaks
+    -  set the value to null if not needed
+    -  Close stream and connections if not needed
+    -  override hashcode and equals method
+    -  avoid string concat using string builder instead
+    -  careful with static collections holding objects
+    
 
 Understanding the various aspects of garbage collection is essential for optimizing memory usage and developing efficient Java applications.
