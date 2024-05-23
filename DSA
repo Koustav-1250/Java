@@ -1,0 +1,2 @@
+- best part of palindrome string is that the smallest part has to be palindrome, so that whole string is palindrome, for ex. 'aba' -> 'b' is palindrom that is why 'aba' is palindrome, 'acca 'cc' -cc is palindrome that is whey 
+acca is plaindrome, so for palindromic string the subtring from middle must be palidrome from both sides.
